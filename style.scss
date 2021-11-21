@@ -150,6 +150,10 @@ img {
                     justify-content: flex-end;
                     height: 50px;
                     padding: 0 1rem;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
 
                 }
 
@@ -208,6 +212,6 @@ img {
     background-color: #7235d1;
 }
 
-#self .card__background {
+#self-care .card__background {
     background-color: #f2c557;
 }

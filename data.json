@@ -1,6 +1,8 @@
 [
   {
-    "title": "Work",
+    "title": "Trabalhando",
+    "id": "work",
+    "image": "icon-work",
     "timeframes": {
       "daily": {
         "current": 5,
@@ -17,7 +19,9 @@
     }
   },
   {
-    "title": "Play",
+    "title": "Jogando",
+    "id": "play",
+    "image": "icon-play",
     "timeframes": {
       "daily": {
         "current": 1,
@@ -34,7 +38,9 @@
     }
   },
   {
-    "title": "Study",
+    "title": "Estudando",
+    "id": "study",
+    "image": "icon-study",
     "timeframes": {
       "daily": {
         "current": 0,
@@ -51,7 +57,9 @@
     }
   },
   {
-    "title": "Exercise",
+    "title": "Exercitando",
+    "id": "exercise",
+    "image": "icon-exercise",
     "timeframes": {
       "daily": {
         "current": 1,
@@ -68,7 +76,9 @@
     }
   },
   {
-    "title": "Social",
+    "title": "Redes Sociais",
+    "id": "social",
+    "image": "icon-social",
     "timeframes": {
       "daily": {
         "current": 1,
@@ -85,7 +95,9 @@
     }
   },
   {
-    "title": "Self Care",
+    "title": "Se Cuidando",
+    "id": "self-care",
+    "image": "icon-self-care",
     "timeframes": {
       "daily": {
         "current": 0,

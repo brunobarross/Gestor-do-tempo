@@ -158,6 +158,10 @@ img {
   height: 50px;
   padding: 0 1rem;
 }
+.dashboard__wrapper-data-item .card__background img {
+  width: 50px;
+  height: 50px;
+}
 .dashboard__wrapper-data-item .card__text {
   padding: 1.5rem;
   border-radius: 16px;
@@ -201,6 +205,6 @@ img {
   background-color: #7235d1;
 }
 
-#self .card__background {
+#self-care .card__background {
   background-color: #f2c557;
 }/*# sourceMappingURL=style.css.map */

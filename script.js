@@ -2,26 +2,27 @@ const wrapper = document.querySelector('.dashboard__wrapper-data');
 
 let data;
 
+
+
 const menuItems = document.querySelectorAll('.dashboard__wrapper-menu-nav li')
 
-const arrayId = ['work', 'play', 'study', 'exercise', 'social', 'self'];
 
 
 
 window.onload = function () {
-    document.querySelector('#daily').click();
+  document.querySelector('#daily').click();
 }
 
 
 
-function getContent(event, title, timeframes, index) {
-    event.preventDefault();
-    if (event.target.textContent == 'Daily') {
-        wrapper.innerHTML = '';
-        return `
-       <div class="dashboard__wrapper-data-item" id="work">
+function getContent(event, title, id, image, timeframes) {
+
+  if (event.target.textContent == 'Diário') {
+    wrapper.innerHTML = '';
+    return `
+       <div class="dashboard__wrapper-data-item" id="${id}">
        <div class="card__background">
-         <img src="images/icon-work.svg" />
+         <img src="images/${image}.svg" />
        </div>
        <div class="card__text">
          <p>${title}</p>
@@ -30,14 +31,14 @@ function getContent(event, title, timeframes, index) {
        </div>
      </div>
        `
-    }
+  }
 
-    if (event.target.textContent == 'Weekly') {
-        wrapper.innerHTML = '';
-        return `
-       <div class="dashboard__wrapper-data-item" id="work">
+  if (event.target.textContent == 'Semanal') {
+    wrapper.innerHTML = '';
+    return `
+       <div class="dashboard__wrapper-data-item" id="${id}">
        <div class="card__background">
-         <img src="images/icon-work.svg" />
+         <img src="images/${image}.svg" />
        </div>
        <div class="card__text">
          <p>${title}</p>
@@ -46,14 +47,14 @@ function getContent(event, title, timeframes, index) {
        </div>
      </div>
        `
-    }
+  }
 
-    if (event.target.textContent == 'Monthly') {
-        wrapper.innerHTML = '';
-        return `
-       <div class="dashboard__wrapper-data-item" id="work">
+  if (event.target.textContent == 'Mensal') {
+    wrapper.innerHTML = '';
+    return `
+       <div class="dashboard__wrapper-data-item" id="${id}">
        <div class="card__background">
-         <img src="images/icon-work.svg" />
+         <img src="images/${image}.svg" />
        </div>
        <div class="card__text">
          <p>${title}</p>
@@ -62,7 +63,7 @@ function getContent(event, title, timeframes, index) {
        </div>
      </div>
        `
-    }
+  }
 }
 
 
@@ -71,18 +72,18 @@ function getContent(event, title, timeframes, index) {
 
 
 const getJson = async () => {
-    const response = await fetch('./data.json');
-    return response.json()
+  const response = await fetch('./data.json');
+  return response.json()
 }
 
 const getData = async (event) => {
-    const data = await getJson();
+  const data = await getJson();
 
-    const mapData = data.map(({ title, timeframes }) => {
-        return getContent(event, title, timeframes);
-    })
+  const mapData = data.map(({title, id, image, timeframes}) => {
+    return getContent(event, title,id,image,timeframes);
+  })
 
-    wrapper.innerHTML += mapData.join('');
+  wrapper.innerHTML += mapData.join('');
 
 }
 
@@ -91,7 +92,7 @@ const getData = async (event) => {
 
 
 menuItems.forEach((item) => {
-    item.addEventListener("click", getData);
+  item.addEventListener("click", getData);
 })
 
 
