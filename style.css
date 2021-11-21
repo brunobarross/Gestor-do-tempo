@@ -44,6 +44,23 @@ img {
 .dashboard {
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 4rem 0;
+  }
+}
+.dashboard h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  padding-bottom: 64px;
+}
+@media (max-width: 1024px) {
+  .dashboard h1 {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+}
 .dashboard__wrapper {
   display: grid;
   grid-template-columns: minmax(200px, 250px) 1fr;
@@ -54,7 +71,6 @@ img {
   .dashboard__wrapper {
     display: flex;
     flex-direction: column;
-    padding: 4rem 0;
     grid-gap: 0;
   }
 }
@@ -124,6 +140,7 @@ img {
   color: #fff;
   padding: 0.5rem;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 .dashboard__wrapper-menu-nav li + li {
   margin-top: 0.5rem;
@@ -178,10 +195,21 @@ img {
   font-size: 2rem;
   color: #fff;
   font-weight: 400;
-  padding-bottom: 0.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
 }
-.dashboard__wrapper-data-item .card__text span {
-  color: #fff;
+@media (max-width: 1024px) {
+  .dashboard__wrapper-data-item .card__text h3 {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.dashboard__wrapper-data-item .card__text h3 span {
+  display: block;
+  padding-top: 0.5rem;
+  color: #D7D2FF;
   font-size: 0.75rem;
 }
 
@@ -207,4 +235,8 @@ img {
 
 #self-care .card__background {
   background-color: #f2c557;
+}
+
+.dashboard__wrapper-menu-nav li.ativo {
+  color: #D7D2FF;
 }/*# sourceMappingURL=style.css.map */

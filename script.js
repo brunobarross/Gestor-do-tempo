@@ -15,6 +15,8 @@ window.onload = function () {
 
 
 
+
+
 function getContent(event, title, id, image, timeframes) {
 
   if (event.target.textContent == 'Diário') {
@@ -26,8 +28,9 @@ function getContent(event, title, id, image, timeframes) {
        </div>
        <div class="card__text">
          <p>${title}</p>
-         <h3>${timeframes.daily.current}hrs</h3>
-         <span>Last Week - ${timeframes.daily.previous}hrs</span>
+         <h3>${timeframes.daily.current} hrs
+          <span>Dia anterior - ${timeframes.daily.previous} hrs</span>
+         </h3>
        </div>
      </div>
        `
@@ -42,8 +45,10 @@ function getContent(event, title, id, image, timeframes) {
        </div>
        <div class="card__text">
          <p>${title}</p>
-         <h3>${timeframes.weekly.current}hrs</h3>
-         <span>Last Week - ${timeframes.weekly.previous}hrs</span>
+         <h3>${timeframes.weekly.current} hrs
+          <span>Semana passada - ${timeframes.weekly.previous} hrs</span>
+         </h3>
+         
        </div>
      </div>
        `
@@ -58,13 +63,16 @@ function getContent(event, title, id, image, timeframes) {
        </div>
        <div class="card__text">
          <p>${title}</p>
-         <h3>${timeframes.monthly.current}hrs</h3>
-         <span>Last Week - ${timeframes.weekly.previous}hrs</span>
+         <h3>${timeframes.monthly.current} hrs
+          <span>Mês passado - ${timeframes.weekly.previous} hrs</span>
+         </h3>
+         
        </div>
      </div>
        `
   }
 }
+
 
 
 
@@ -79,11 +87,13 @@ const getJson = async () => {
 const getData = async (event) => {
   const data = await getJson();
 
-  const mapData = data.map(({title, id, image, timeframes}) => {
-    return getContent(event, title,id,image,timeframes);
+  const mapData = data.map(({ title, id, image, timeframes }) => {
+    return getContent(event, title, id, image, timeframes);
   })
 
+
   wrapper.innerHTML += mapData.join('');
+
 
 }
 
@@ -91,8 +101,9 @@ const getData = async (event) => {
 
 
 
-menuItems.forEach((item) => {
+menuItems.forEach((item, index) => {
   item.addEventListener("click", getData);
+
 })
 
 
